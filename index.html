@@ -166,6 +166,7 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
 .readout.share .rv{color:var(--steel)}
 .readout.profit .rv{color:var(--green)}
 .readout.profit.bad .rv{color:var(--red)}
+.readout.share.bad .rv{color:var(--red)}
 .calc-chart-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
 .verdict{margin-top:18px;padding:16px 18px;border-radius:12px;background:var(--bg-soft);border:1px solid var(--border);font-size:1rem;font-weight:600;line-height:1.5;color:var(--ink)}
 .verdict.win{background:var(--green-soft);border-color:#bce3cc}
@@ -484,7 +485,7 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
           </div>
         </div>
         <div class="readouts">
-          <div class="readout share">
+          <div class="readout share" id="shareBox">
             <div class="rl en">Merino.tech market share</div><div class="rl zh">Merino.tech 市场份额</div>
             <div class="rv" id="shareOut">45%</div>
           </div>
@@ -794,9 +795,8 @@ if(hasChart){
 
 /* ===== IMPACT MODEL ===== */
 var BASE_VOL=1.80, BASE_SHARE=45;   // 1.80M = today's annual order to ZFL
-function retention(p){ // % of volume retained at FOB increase p%
-  var r = (p<=6) ? (100 - p*1.2) : (92.8 - (p-6)*6.6);
-  return Math.max(15, r);
+function retention(p){ // % of volume retained at FOB increase p% (steep: each +1% costs ~6% of volume)
+  return Math.max(8, 100 - p*6);
 }
 function shareAt(p){ return BASE_SHARE * retention(p)/100; }
 function volAt(p){ return BASE_VOL * retention(p)/100; }            // million pcs (order to ZFL)
@@ -831,8 +831,9 @@ function recalc(){
   document.getElementById('shareOut').textContent=Math.round(share)+'%';
   document.getElementById('profitOut').textContent=fmtVol(vol);
 
-  var box=document.getElementById('profitBox');
-  box.classList.toggle('bad', p>6);
+  var bad = p>0;
+  document.getElementById('shareBox').classList.toggle('bad', bad);
+  document.getElementById('profitBox').classList.toggle('bad', bad);
 
   if(impactChart){
     // move the gold marker onto the order-volume line at current p
@@ -843,14 +844,14 @@ function recalc(){
 
   var v=document.getElementById('verdict'), en=document.getElementById('verdictEn'), zh=document.getElementById('verdictZh');
   var lostPct=Math.round((1 - vol/BASE_VOL)*100);
-  if(p<=6){
+  if(p===0){
     v.className='verdict win';
-    en.textContent='At +'+p+'%, Merino.tech keeps ~'+Math.round(share)+'% of the market and orders ~'+fmtVol(vol)+' pieces from ZFL — close to today’s 1.80M. Volumes keep growing.';
-    zh.textContent='在 +'+p+'% 时，Merino.tech 保住约 '+Math.round(share)+'% 的市场，向 ZFL 下单约 '+fmtVol(vol)+' 件 —— 接近目前的 180 万件。订单量持续增长。';
+    en.textContent='At today’s price, Merino.tech holds ~'+Math.round(share)+'% of the market and orders the full 1.80M pieces from ZFL.';
+    zh.textContent='在当前价格下（不涨价），Merino.tech 占约 '+Math.round(share)+'% 的市场，向 ZFL 下单完整的 180 万件。';
   } else {
     v.className='verdict lose';
-    en.textContent='At +'+p+'%, share falls to ~'+Math.round(share)+'% and our order to ZFL drops to ~'+fmtVol(vol)+' pieces — about '+lostPct+'% below today’s 1.80M. A higher price, but far fewer orders for ZFL.';
-    zh.textContent='在 +'+p+'% 时，份额跌到约 '+Math.round(share)+'%，我们给 ZFL 的订单降到约 '+fmtVol(vol)+' 件 —— 比目前的 180 万件少约 '+lostPct+'%。价格更高，但 ZFL 的订单大幅减少。';
+    en.textContent='At +'+p+'%, share falls to ~'+Math.round(share)+'% and our order to ZFL drops to ~'+fmtVol(vol)+' pieces — about '+lostPct+'% below today’s 1.80M. Every price increase means fewer orders for ZFL.';
+    zh.textContent='在 +'+p+'% 时，份额跌到约 '+Math.round(share)+'%，我们给 ZFL 的订单降到约 '+fmtVol(vol)+' 件 —— 比目前的 180 万件少约 '+lostPct+'%。每一次涨价，都意味着 ZFL 的订单更少。';
   }
 }
 

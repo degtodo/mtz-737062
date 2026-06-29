@@ -444,7 +444,7 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
           <div class="readout" style="background:var(--red-soft);border-color:#f0cccc">
             <div class="rl en">MERIWOOL sales</div><div class="rl zh">MERIWOOL 销量</div>
             <div class="rv" style="color:var(--red)">−73%</div>
-            <div class="note" style="margin-top:4px">1,936 → 529 <span class="en">units (Jan→May)</span><span class="zh">件（1月→5月）</span></div>
+            <div class="note" style="margin-top:4px">1,936 → 529 <span class="en">units</span><span class="zh">件</span></div>
           </div>
         </div>
         <p style="margin-top:18px" class="en"><b>A ~10% retail rise was enough to break a strong brand.</b> If we raise Merino.tech prices, we don't just lose some profit — we lose the market, and then our orders to ZFL fall.</p>
@@ -763,7 +763,7 @@ if(hasChart){
 
 /* ===== MERIWOOL CHART (real data) ===== */
 var meriMonths=['Feb 25','Mar 25','Apr 25','May 25','Jun 25','Jul 25','Aug 25','Sep 25','Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26','May 26'];
-var mtShare=[29,31,34,36,39,41,43,45,47,49,50,52,53,55,56,57];
+var mtShare=[29.8,33.9,36.8,40.0,46.0,57.0,47.0,42.0,31.0,16.0,43.0,48.0,53.0,43.0,36.0,33.0];
 var mwShare=[25.8,28.1,23.6,18.5,21.1,13.4,14.2,16.0,23.9,20.4,17.0,13.8,13.3,11.6,9.7,7.9];
 var vMarker={ id:'vMarker', afterDraw:function(chart,a,opts){ if(!opts||opts.index==null) return;
   var x=chart.scales.x.getPixelForValue(opts.index), ca=chart.chartArea, ctx=chart.ctx;

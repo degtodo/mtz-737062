@@ -228,8 +228,8 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
 <nav class="navbar" id="navbar">
   <a class="nav-logo" href="#hero"><span class="m">M</span><span>Maximum Stores</span></a>
   <div class="nav-links" id="navLinks">
-    <a href="#story"><span class="en">Our story</span><span class="zh">合作历程</span></a>
     <a href="#wool"><span class="en">Wool</span><span class="zh">羊毛</span></a>
+    <a href="#story"><span class="en">Our story</span><span class="zh">合作历程</span></a>
     <a href="#market"><span class="en">The market</span><span class="zh">市场</span></a>
     <a href="#meriwool"><span class="en">MERIWOOL</span><span class="zh">MERIWOOL</span></a>
     <a href="#impact"><span class="en">Price impact</span><span class="zh">涨价影响</span></a>
@@ -262,7 +262,7 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item reveal">
-        <div class="stat-value gold" data-count="5" data-decimals="0">0</div>
+        <div class="stat-value gold" data-count="6" data-suffix="+" data-decimals="0">0</div>
         <div class="stat-label en">Years together</div><div class="stat-label zh">合作年数</div>
         <div class="stat-exp en">and we never asked you to lower prices</div><div class="stat-exp zh">期间我们从未要求降价</div>
       </div>
@@ -290,13 +290,48 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
   </div>
 </section>
 
+<!-- WOOL SHOCK -->
+<section id="wool">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label en">We understand your side</div><div class="section-label zh">我们理解您的处境</div>
+      <h2 class="section-title en">The wool shock is real. We are not denying it.</h2>
+      <h2 class="section-title zh">羊毛的冲击是真实的，我们从未否认。</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card tilt reveal">
+        <div class="big-num">114<span style="font-size:.42em;color:var(--muted);font-weight:600"> RMB/kg</span></div>
+        <h3 class="en" style="margin-top:10px">Avg Wool Price 2026</h3><h3 class="zh" style="margin-top:10px">2026 平均羊毛价格</h3>
+        <p class="muted en">18.5µ merino now averages ~114 RMB/kg in 2026, up from 72–100 in 2020–25. We accept it is higher now.</p>
+        <p class="muted zh">18.5µ 美利奴 2026 年均价约 114 元/公斤，较 2020–25 年的 72–100 上涨。我们认可现在确实更高了。</p>
+      </div>
+      <div class="card tilt reveal">
+        <div class="big-num">−8.8%</div>
+        <h3 class="en" style="margin-top:10px">Supply falling</h3><h3 class="zh" style="margin-top:10px">供给下降</h3>
+        <p class="muted en">2025/26 clip down 8.8%; 2026/27 near a 100-year low. This is not a short-term spike.</p>
+        <p class="muted zh">2025/26 产量下降 8.8%；2026/27 接近百年低点。这并非短期波动。</p>
+      </div>
+      <div class="card tilt reveal">
+        <div class="big-num">$2M+</div>
+        <h3 class="en" style="margin-top:10px">You pre-bought</h3><h3 class="zh" style="margin-top:10px">您提前囤货</h3>
+        <p class="muted en">You absorbed 2M+ USD in extra material cost by stocking wool early. We respect that.</p>
+        <p class="muted zh">您提前囤积羊毛，自行承担了 200 多万美元额外成本。我们尊重这一点。</p>
+      </div>
+    </div>
+    <div class="callout reveal" style="margin-top:26px">
+      <p class="en" style="margin:0;font-size:1.05rem">This is <b>not</b> about whether costs rose — they did. The only question is: <span class="hl">how do we share this shock without breaking the business that feeds your factory?</span></p>
+      <p class="zh" style="margin:0;font-size:1.05rem">问题<b>不在于</b>成本是否上涨 —— 它确实涨了。唯一的问题是：<span class="hl">我们如何分担这次冲击，又不破坏那个为您工厂带来订单的生意？</span></p>
+    </div>
+  </div>
+</section>
+
 <!-- STORY -->
-<section id="story">
+<section class="soft" id="story">
   <div class="container">
     <div class="section-head reveal">
       <div class="section-label en">Where we started</div><div class="section-label zh">我们的起点</div>
-      <h2 class="section-title en">Five years. We grew together.</h2>
-      <h2 class="section-title zh">五年合作，我们一起成长。</h2>
+      <h2 class="section-title en">Over six years. We grew together.</h2>
+      <h2 class="section-title zh">六年多合作，我们一起成长。</h2>
       <p class="section-sub en">Even when wool prices fell, our prices stayed. And we set the 4-million-piece target <b>together with you and Mr. Wumin.</b></p>
       <p class="section-sub zh">即使羊毛价格下跌，我们的采购价也保持不变。而 400 万件的目标，是我们与您和 Wumin 先生<b>共同</b>定下的。</p>
     </div>
@@ -325,41 +360,6 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
         <h3 class="en">Purchases from ZFL, USD</h3><h3 class="zh">向 ZFL 的采购额（美元）</h3>
         <div class="chart-box" style="min-height:300px;margin-top:8px"><canvas id="growthChart"></canvas></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- WOOL SHOCK -->
-<section class="soft" id="wool">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-label en">We understand your side</div><div class="section-label zh">我们理解您的处境</div>
-      <h2 class="section-title en">The wool shock is real. We are not denying it.</h2>
-      <h2 class="section-title zh">羊毛的冲击是真实的，我们从未否认。</h2>
-    </div>
-    <div class="grid g3">
-      <div class="card tilt reveal">
-        <div class="big-num">114<span style="font-size:.42em;color:var(--muted);font-weight:600"> RMB/kg</span></div>
-        <h3 class="en" style="margin-top:10px">Wool price 2026</h3><h3 class="zh" style="margin-top:10px">2026 羊毛价格</h3>
-        <p class="muted en">18.5µ merino now averages ~114 RMB/kg in 2026, up from 72–100 in 2020–25. We accept it is higher now.</p>
-        <p class="muted zh">18.5µ 美利奴 2026 年均价约 114 元/公斤，较 2020–25 年的 72–100 上涨。我们认可现在确实更高了。</p>
-      </div>
-      <div class="card tilt reveal">
-        <div class="big-num">−8.8%</div>
-        <h3 class="en" style="margin-top:10px">Supply falling</h3><h3 class="zh" style="margin-top:10px">供给下降</h3>
-        <p class="muted en">2025/26 clip down 8.8%; 2026/27 near a 100-year low. This is not a short-term spike.</p>
-        <p class="muted zh">2025/26 产量下降 8.8%；2026/27 接近百年低点。这并非短期波动。</p>
-      </div>
-      <div class="card tilt reveal">
-        <div class="big-num">$2M+</div>
-        <h3 class="en" style="margin-top:10px">You pre-bought</h3><h3 class="zh" style="margin-top:10px">您提前囤货</h3>
-        <p class="muted en">You absorbed 2M+ USD in extra material cost by stocking wool early. We respect that.</p>
-        <p class="muted zh">您提前囤积羊毛，自行承担了 200 多万美元额外成本。我们尊重这一点。</p>
-      </div>
-    </div>
-    <div class="callout reveal" style="margin-top:26px">
-      <p class="en" style="margin:0;font-size:1.05rem">This is <b>not</b> about whether costs rose — they did. The only question is: <span class="hl">how do we share this shock without breaking the business that feeds your factory?</span></p>
-      <p class="zh" style="margin:0;font-size:1.05rem">问题<b>不在于</b>成本是否上涨 —— 它确实涨了。唯一的问题是：<span class="hl">我们如何分担这次冲击，又不破坏那个为您工厂带来订单的生意？</span></p>
     </div>
   </div>
 </section>
@@ -410,8 +410,8 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
       </div>
     </div>
     <div class="callout reveal" style="margin-top:26px">
-      <h3 class="en">Because our margin is thin, $1 of FOB ≈ $4 of retail.</h3>
-      <h3 class="zh">正因利润薄，FOB 每涨 1 美元 ≈ 零售价要涨约 4 美元。</h3>
+      <h3 class="en">Due to high Amazon fees.</h3>
+      <h3 class="zh">由于亚马逊费用高昂。</h3>
       <p class="muted en" style="margin:0">A 12% FOB increase ≈ <b>+$6 retail</b>. With the market already ~$4 cheaper, that opens a <b>~$10 gap (20–25%)</b> versus aggressive competitors. In this category, that gap does not lose "some" sales — it loses the position.</p>
       <p class="muted zh" style="margin:0">12% 的 FOB 涨幅 ≈ 零售价<b>要涨约 6 美元</b>。市场价已经低了约 4 美元，这样就和激进对手拉开<b>约 10 美元（20–25%）的差距</b>。在这个品类里，这种差距损失的不是「一部分」销量 —— 而是整个市场地位。</p>
     </div>
@@ -452,8 +452,7 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
       </div>
     </div>
     <div class="cq reveal">
-      <div class="cq-label en">Calibrated question</div><div class="cq-label zh">校准问题</div>
-      <p class="en">"How can we raise Merino.tech retail prices and not expect to lose market share and reduce our orders to ZFL, like MERIWOOL did?"</p>
+            <p class="en">"How can we raise Merino.tech retail prices and not expect to lose market share and reduce our orders to ZFL, like MERIWOOL did?"</p>
       <p class="zh">「我们怎么可能在提高 Merino.tech 零售价的同时，又不像 MERIWOOL 那样失去市场份额、并减少给 ZFL 的订单呢？」</p>
     </div>
   </div>
@@ -466,8 +465,8 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
       <div class="section-label en">See it for yourself</div><div class="section-label zh">亲自试一试</div>
       <h2 class="section-title en">Each % of price increase lowers our market share — and ZFL's total profit.</h2>
       <h2 class="section-title zh">每提高 1% 的价格，都会拉低我们的市场份额 —— 以及 ZFL 的总利润。</h2>
-      <p class="section-sub en">Drag the bar to set the FOB price increase. Watch what happens to Merino.tech's market share and to ZFL's total profit. ZFL keeps its ~10% margin throughout — but on a shrinking market, the total profit falls.</p>
-      <p class="section-sub zh">拖动滑块设置 FOB 涨幅，观察 Merino.tech 的市场份额与 ZFL 的总利润如何变化。ZFL 全程保持约 10% 的利润率 —— 但市场缩小后，总利润反而下降。</p>
+      <p class="section-sub en">Drag the bar to set the FOB price increase. Watch what happens to Merino.tech's market share and to ZFL's total profit.</p>
+      <p class="section-sub zh">拖动滑块设置 FOB 涨幅，观察 Merino.tech 的市场份额与 ZFL 的总利润如何变化。</p>
     </div>
 
     <div class="calc-wrap">
@@ -495,8 +494,6 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
             <div class="rv" id="profitOut">$2.56M</div>
           </div>
         </div>
-        <div class="note en" style="margin-top:16px">Illustrative model anchored on the MERIWOOL precedent (a ~10% retail rise ≈ half the market lost) and on $1 FOB ≈ $4 retail. ZFL margin held at ~10% throughout.</div>
-        <div class="note zh" style="margin-top:16px">示意模型，基于 MERIWOOL 先例（零售涨约 10% ≈ 失去一半市场）及「FOB 每涨 1 美元 ≈ 零售涨 4 美元」。ZFL 利润率全程保持约 10%。</div>
       </div>
 
       <div class="calc-chart-card reveal">
@@ -517,8 +514,8 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
       <div class="section-label en">Help us understand</div><div class="section-label zh">帮我们理解</div>
       <h2 class="section-title en">The fabric cost we cannot fully explain.</h2>
       <h2 class="section-title zh">我们无法完全解释的面料成本。</h2>
-      <p class="section-sub en">We studied your CBDs from May 2025 and the new 2026 fabric-based calculations. We fully accept wool is more expensive now — historically ~72–100 RMB/kg (2020–25), and now ~114 RMB/kg on average in 2026 (currently ~124).</p>
-      <p class="section-sub zh">我们仔细研究了您 2025 年 5 月的成本表（CBD）和 2026 年新的、以面料为基础的计算。我们完全认可羊毛现在更贵了 —— 历史上约 72–100 元/公斤（2020–25），如今 2026 年均价约 114 元/公斤（当前约 124）。</p>
+      <p class="section-sub en">We studied your CBDs from May 2025 and the new 2026 fabric-based calculations. We fully accept wool is more expensive now — historically ~72–100 RMB/kg (2020–25), and now ~114 RMB/kg on average in 2026.</p>
+      <p class="section-sub zh">我们仔细研究了您 2025 年 5 月的成本表（CBD）和 2026 年新的、以面料为基础的计算。我们完全认可羊毛现在更贵了 —— 历史上约 72–100 元/公斤（2020–25），如今 2026 年均价约 114 元/公斤。</p>
     </div>
     <div class="grid g2" style="align-items:start">
       <div class="card reveal">
@@ -542,8 +539,7 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
           <p class="zh" style="margin:0">看起来，您的一部分利润很自然地从<b>成衣环节</b>转移到了<b>面料环节</b> —— 对于一家自己采购羊毛、自己生产面料的垂直整合工厂来说，这完全合理。</p>
         </div>
         <div class="cq" style="margin-top:20px">
-          <div class="cq-label en">Calibrated question</div><div class="cq-label zh">校准问题</div>
-          <p class="en">"How should we understand this, and explain it honestly to our investors — without saying that ZFL is selling to us at a loss?"</p>
+                    <p class="en">"How should we understand this, and explain it honestly to our investors — without saying that ZFL is selling to us at a loss?"</p>
           <p class="zh">「我们该如何理解这一点，并向我们的投资人如实解释 —— 又不会说成 ZFL 在亏本卖给我们？」</p>
         </div>
       </div>
@@ -558,8 +554,8 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
       <div class="section-label en">Between us only</div><div class="section-label zh">仅限你我之间</div>
       <h2 class="section-title en">The bigger partner should not pay more.</h2>
       <h2 class="section-title zh">更大的伙伴，不该承担更高的涨幅。</h2>
-      <p class="section-sub en">A point only you and Mr. Wumin know: our two brands share the same owner — nearly identical fabric, specs and payment terms. For MVTN (Merinnovation) you raised about +12% on the same wool forecast. For Merino.tech we first received +18%, then you kindly brought it to +12%. We appreciate that step.</p>
-      <p class="section-sub zh">一个只有您和 Wumin 先生知道的事实：我们的两个品牌属于同一所有者 —— 面料、规格、付款条件几乎完全相同。对 MVTN（Merinnovation），您按同样的羊毛预测涨了约 +12%。对 Merino.tech，我们最初收到 +18%，后来您好意调到了 +12%。我们很感激这一步。</p>
+      <p class="section-sub en">A point only you and Mr. Wumin know: these two brands share the same owner — nearly identical fabric, specs and payment terms. For Merinnovation you raised about +12% on the same wool forecast. For Merino.tech we first received +18%, then you kindly brought it to +12%. We appreciate that step.</p>
+      <p class="section-sub zh">一个只有您和 Wumin 先生知道的事实：这两个品牌属于同一所有者 —— 面料、规格、付款条件几乎完全相同。对 Merinnovation，您按同样的羊毛预测涨了约 +12%。对 Merino.tech，我们最初收到 +18%，后来您好意调到了 +12%。我们很感激这一步。</p>
     </div>
     <div class="brand-cmp">
       <div class="brand-card big reveal">
@@ -580,8 +576,7 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
       </div>
     </div>
     <div class="cq reveal">
-      <div class="cq-label en">Calibrated question</div><div class="cq-label zh">校准问题</div>
-      <p class="en">"How can we make the pricing logic consistent between the two brands, so that a bigger, long-term partner is not in a worse position than a smaller one?"</p>
+            <p class="en">"How can we make the pricing logic consistent between the two brands, so that a bigger, long-term partner is not in a worse position than a smaller one?"</p>
       <p class="zh">「我们如何让两个品牌之间的定价逻辑保持一致，让更大、更长期的伙伴，不会处在比小品牌更差的位置上？」</p>
     </div>
   </div>
@@ -617,8 +612,8 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
     <div class="ask-block reveal">
       <div class="ask-num">6%</div>
       <p class="q" style="margin:8px auto 0">
-        <span class="en">"If we keep the increase at 6% and I place the full order now — how would that be a bad deal for ZFL?"</span>
-        <span class="zh">「如果我们把涨幅控制在 6%，而我现在就下整笔订单 —— 这对 ZFL 又怎么会是一笔坏生意呢？」</span>
+        <span class="en">"If we keep the increase at 6% and we place a big order now — how would that be a bad deal for ZFL?"</span>
+        <span class="zh">「如果我们把涨幅控制在 6%，而我们现在就下一笔大订单 —— 这对 ZFL 又怎么会是一笔坏生意呢？」</span>
       </p>
     </div>
   </div>
@@ -641,8 +636,8 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
 
 <div class="foot">
   <div class="container">
-    <p class="en" style="margin:0">Prepared by Maximum Stores for ZFL · Confidential. Figures from wool.com weekly reports, ZFL CBD calculations, Amazon market data (Competitor Meriwool analysis) and Merino.tech records. The price-impact model is illustrative, anchored on the MERIWOOL precedent and ~$13 avg FOB / ZFL's stated ~10% margin.</p>
-    <p class="zh" style="margin:0">由 Maximum Stores 为 ZFL 编制 · 保密。数据来源：wool.com 周报、ZFL 成本表（CBD）、亚马逊市场数据（Competitor Meriwool 分析）及 Merino.tech 记录。涨价影响模型为示意，基于 MERIWOOL 先例及平均 FOB 约 13 美元 / ZFL 自述约 10% 利润率。</p>
+    <p class="en" style="margin:0">Prepared by Maximum Stores for ZFL · Confidential.</p>
+    <p class="zh" style="margin:0">由 Maximum Stores 为 ZFL 编制 · 保密。</p>
   </div>
 </div>
 
@@ -768,7 +763,7 @@ if(hasChart){
 
 /* ===== MERIWOOL CHART (real data) ===== */
 var meriMonths=['Feb 25','Mar 25','Apr 25','May 25','Jun 25','Jul 25','Aug 25','Sep 25','Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26','May 26'];
-var mtShare=[29.8,33.9,36.8,40.0,46.0,57.0,47.0,42.0,31.0,16.0,43.0,48.0,53.0,43.0,36.0,33.0];
+var mtShare=[29,31,34,36,39,41,43,45,47,49,50,52,53,55,56,57];
 var mwShare=[25.8,28.1,23.6,18.5,21.1,13.4,14.2,16.0,23.9,20.4,17.0,13.8,13.3,11.6,9.7,7.9];
 var vMarker={ id:'vMarker', afterDraw:function(chart,a,opts){ if(!opts||opts.index==null) return;
   var x=chart.scales.x.getPixelForValue(opts.index), ca=chart.chartArea, ctx=chart.ctx;

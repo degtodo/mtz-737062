@@ -232,10 +232,10 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
     <a href="#story"><span class="en">Our story</span><span class="zh">合作历程</span></a>
     <a href="#market"><span class="en">The market</span><span class="zh">市场</span></a>
     <a href="#meriwool"><span class="en">MERIWOOL</span><span class="zh">MERIWOOL</span></a>
+    <a href="#impact"><span class="en">Price impact</span><span class="zh">涨价影响</span></a>
     <a href="#fabric"><span class="en">Fabric cost</span><span class="zh">面料成本</span></a>
     <a href="#fairness"><span class="en">Fairness</span><span class="zh">公平</span></a>
     <a href="#proposal"><span class="en">Proposal</span><span class="zh">提议</span></a>
-    <a href="#impact"><span class="en">Price impact</span><span class="zh">涨价影响</span></a>
   </div>
   <div class="toggle" role="group" aria-label="language">
     <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
@@ -458,8 +458,56 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
   </div>
 </section>
 
+<!-- IMPACT DRAG BAR -->
+<section id="impact">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label en">See it for yourself</div><div class="section-label zh">亲自试一试</div>
+      <h2 class="section-title en">Each % of price increase lowers our market share — and ZFL's total profit.</h2>
+      <h2 class="section-title zh">每提高 1% 的价格，都会拉低我们的市场份额 —— 以及 ZFL 的总利润。</h2>
+      <p class="section-sub en">Drag the bar to set the FOB price increase. Watch what happens to Merino.tech's market share and to ZFL's total profit.</p>
+      <p class="section-sub zh">拖动滑块设置 FOB 涨幅，观察 Merino.tech 的市场份额与 ZFL 的总利润如何变化。</p>
+    </div>
+
+    <div class="calc-wrap">
+      <div class="calc-panel reveal">
+        <h3 class="en">Set the FOB price increase</h3><h3 class="zh">设置 FOB 涨幅</h3>
+        <div class="slidewrap">
+          <label>
+            <span class="en">FOB price increase</span><span class="zh">FOB 涨幅</span>
+            <b id="pLabel">5%</b>
+          </label>
+          <input type="range" id="pInc" min="0" max="15" step="1" value="5" oninput="recalc()">
+          <div class="range-ends">
+            <span>0%</span>
+            <span>15%</span>
+          </div>
+        </div>
+        <div class="readouts">
+          <div class="readout share">
+            <div class="rl en">Merino.tech market share</div><div class="rl zh">Merino.tech 市场份额</div>
+            <div class="rv" id="shareOut">42%</div>
+          </div>
+          <div class="readout profit" id="profitBox">
+            <div class="rl en">ZFL annual profit</div><div class="rl zh">ZFL 年度利润</div>
+            <div class="rv" id="profitOut">$2.57M</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-chart-card reveal">
+        <div class="chart-box"><canvas id="impactChart"></canvas></div>
+        <div class="verdict win" id="verdict">
+          <span class="en" id="verdictEn"></span>
+          <span class="zh" id="verdictZh"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FABRIC / NUMBER TENSION -->
-<section id="fabric">
+<section class="soft" id="fabric">
   <div class="container">
     <div class="section-head reveal">
       <div class="section-label en">Help us understand</div><div class="section-label zh">帮我们理解</div>
@@ -499,7 +547,7 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
 </section>
 
 <!-- FAIRNESS -->
-<section class="soft" id="fairness">
+<section id="fairness">
   <div class="container">
     <div class="section-head reveal">
       <div class="section-label en">Between us only</div><div class="section-label zh">仅限你我之间</div>
@@ -566,55 +614,6 @@ input[type=range]{width:100%;accent-color:var(--gold-bright);height:6px;cursor:p
         <span class="en">"If we keep the increase at 6% and we place a big order now — how would that be a bad deal for ZFL?"</span>
         <span class="zh">「如果我们把涨幅控制在 6%，而我们现在就下一笔大订单 —— 这对 ZFL 又怎么会是一笔坏生意呢？」</span>
       </p>
-    </div>
-  </div>
-</section>
-
-<!-- IMPACT DRAG BAR -->
-<section id="impact">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-label en">See it for yourself</div><div class="section-label zh">亲自试一试</div>
-      <h2 class="section-title en">Each % of price increase lowers our market share — and ZFL's total profit.</h2>
-      <h2 class="section-title zh">每提高 1% 的价格，都会拉低我们的市场份额 —— 以及 ZFL 的总利润。</h2>
-      <p class="section-sub en">Drag the bar to set the FOB price increase. Watch what happens to Merino.tech's market share and to ZFL's total profit.</p>
-      <p class="section-sub zh">拖动滑块设置 FOB 涨幅，观察 Merino.tech 的市场份额与 ZFL 的总利润如何变化。</p>
-    </div>
-
-    <div class="calc-wrap">
-      <div class="calc-panel reveal">
-        <h3 class="en">Set the FOB price increase</h3><h3 class="zh">设置 FOB 涨幅</h3>
-        <div class="slidewrap">
-          <label>
-            <span class="en">FOB price increase</span><span class="zh">FOB 涨幅</span>
-            <b id="pLabel">6%</b>
-          </label>
-          <input type="range" id="pInc" min="0" max="15" step="1" value="6" oninput="recalc()">
-          <div class="range-ends">
-            <span>0%</span>
-            <span class="en">our 6% offer</span><span class="zh">我们的 6% 方案</span>
-            <span>15%</span>
-          </div>
-        </div>
-        <div class="readouts">
-          <div class="readout share">
-            <div class="rl en">Merino.tech market share</div><div class="rl zh">Merino.tech 市场份额</div>
-            <div class="rv" id="shareOut">42%</div>
-          </div>
-          <div class="readout profit" id="profitBox">
-            <div class="rl en">ZFL annual profit</div><div class="rl zh">ZFL 年度利润</div>
-            <div class="rv" id="profitOut">$2.56M</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="calc-chart-card reveal">
-        <div class="chart-box"><canvas id="impactChart"></canvas></div>
-        <div class="verdict win" id="verdict">
-          <span class="en" id="verdictEn"></span>
-          <span class="zh" id="verdictZh"></span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
